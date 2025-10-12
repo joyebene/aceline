@@ -16,7 +16,7 @@ const Hero = () => {
             <span className="text-red-600">confidence</span>
           </h1>
 
-          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl">
+          <p className="text-xl text-gray-800 leading-relaxed max-w-3xl">
             Aceline is an award-winning branding agency dedicated to transforming businesses through strategic branding, creative excellence, and data-driven insights that drive measurable growth.
           </p>
           </div>

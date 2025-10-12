@@ -15,7 +15,7 @@ const Hero = () => {
             <span className="text-[#dd1e26]">with us</span>
           </h1>
 
-          <p className="text-xl text-gray-700 leading-relaxed max-w-3xl">
+          <p className="text-xl text-gray-800 leading-relaxed max-w-3xl">
             Ready to transform your brand? Get in touch with our team and let&apos;s discuss how we can help you achieve your goals.
           </p>
         </div>
