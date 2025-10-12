@@ -14,7 +14,7 @@ const services = [
             { icon: <Briefcase className="w-6 h-6 text-primary" />, title: "Brand Strategy", desc: "Positioning & storytelling" },
             { icon: <Smartphone className="w-6 h-6 text-primary" />, title: "Digital Presence", desc: "Website & social media design" },
         ],
-        stats: { rating: "4.9/5", label: "Client Rating", projects: "250+", label2: "Projects" },
+        stats: { rating: "4.9/5", label: "Client Rating", projects: "50+", label2: "Projects" },
     },
     {
         title: "Training & Consultancy",
@@ -24,7 +24,7 @@ const services = [
             { icon: <BookOpen className="w-6 h-6 text-primary" />, title: "Consultancy", desc: "Tailored brand growth strategies" },
             { icon: <Lightbulb className="w-6 h-6 text-primary" />, title: "Skill Development", desc: "Creative and marketing training" },
         ],
-        stats: { rating: "5.0/5", label: "Feedback Score", projects: "100+", label2: "Brands Trained" },
+        stats: { rating: "5.0/5", label: "Feedback Score", projects: "10+", label2: "Brands Trained" },
     },
     {
         title: "Media Management",
@@ -34,7 +34,7 @@ const services = [
             { icon: <BarChart2 className="w-6 h-6 text-primary" />, title: "Campaign Strategy", desc: "Targeted ad management" },
             { icon: <LineChart className="w-6 h-6 text-primary" />, title: "Analytics", desc: "Performance insights & optimization" },
         ],
-        stats: { rating: "4.8/5", label: "Audience Growth", projects: "300+", label2: "Campaigns" },
+        stats: { rating: "4.8/5", label: "Audience Growth", projects: "30+", label2: "Campaigns" },
     },
 ];
 
