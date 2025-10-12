@@ -1,0 +1,52 @@
+.cta-btn {
+  position: relative;
+  background-color: #dd1e26;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ff4248;
+  transition: width 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.cta-btn:hover::before {
+  width: 100%;
+}
+
+.cta-btn span {
+  position: relative;
+}
+
+
+.nav-link {
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  color: #dd1e26;
+}
+
+.activeNavLink {
+  color: #dd1e26;
+  font-weight: bold;
+  position: relative;
+}
+
+.activeNavLink::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #dd1e26;
+}
