@@ -16,7 +16,7 @@ const MapDirection = () => {
                        <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
                             <div className="text-6xl mb-4">📍</div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">Find Us in Lagos</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-2">Find Us in Abuja</h3>
                             <p className="text-gray-600">Abuja, Nigeria</p>
                             <button className="mt-4 px-6 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-all" onClick={() => setShowMap(true)}>
                                 Get Directions
