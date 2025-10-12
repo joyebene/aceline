@@ -51,7 +51,7 @@ const Navbar = () => {
                         {/* Desktop Links */}
                         <div className='hidden md:block w-[70%]'>
                             <nav className='flex items-center justify-between'>
-                                <div className='flex items-center gap-20'>
+                                <div className='flex items-center gap-20 text-[#1a1b1e]'>
                                     {NavLinks.map((link) => (
                                         <div key={link.name} className='inline font-[16px]'>
                                             <Link href={link.path}>
@@ -106,12 +106,12 @@ const Navbar = () => {
                                     <h4 className='py-4 font-semibold text-lg'>Menu</h4>
 
                                     {/* Menu Links */}
-                                    <div className={`w-full mb-5 rounded-lg p-2 text-center ${pathname === '/' ? 'text-[#f5f5f5] bg-[#dd1e26]' : 'bg-white shadow-sm'}`}>
+                                    <div className={`w-full mb-5 rounded-lg p-2 text-center ${pathname === '/' ? 'text-[#f5f5f5] bg-[#dd1e26]' : 'bg-white shadow-sm text-[#1a1b1e]'}`}>
                                         <Link href="/" className='w-full flex justify-center' onClick={() => setOpenNav(false)} >Home</Link>
                                     </div>
 
                                     {NavLinks.map((link) => (
-                                        <div key={link.name} className={`font-[16px] mb-5 rounded-lg p-2 text-center  ${styles.navLink} ${pathname === link.path ? 'bg-[#dd1e26] shadow-md shadow-gray-500 text-[#f5f5f5]' : 'bg-white shadow-sm'}`}>
+                                        <div key={link.name} className={`font-[16px] mb-5 rounded-lg p-2 text-center  ${styles.navLink} ${pathname === link.path ? 'bg-[#dd1e26] shadow-md shadow-gray-500 text-[#f5f5f5]' : 'bg-white shadow-sm text-[#1a1b1e]'}`}>
                                             <Link href={link.path}onClick={() => setOpenNav(false)} className='flex justify-center'>
                                                 {link.name}
                                             </Link>

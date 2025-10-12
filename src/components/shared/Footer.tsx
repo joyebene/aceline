@@ -1,4 +1,5 @@
 // components/Footer.js
+import Image from 'next/image';
 import Link from 'next/link';
 import { BsInstagram } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
@@ -13,6 +14,7 @@ export default function Footer() {
         {/* Logo and Company Info */}
         <div>
           <Link href="/">
+          {/* <Image src="/logo/img ()"} /> */}
             <span className="text-3xl font-bold text-red-500">aceline</span>
           </Link>
           <p className="mt-4 text-sm text-gray-400">
