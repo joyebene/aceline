@@ -6,7 +6,7 @@ const Stats = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '100+', label: 'Brands Built' },
+              { number: '50+', label: 'Brands Built' },
               { number: '5+', label: 'Years Experience' },
               { number: '90%', label: 'Client Satisfaction' },
               { number: '10+', label: 'Team Members' }
