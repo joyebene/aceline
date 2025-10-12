@@ -3,6 +3,7 @@
 import React from 'react';
 import ServicesCarousel from './serviceCarousel';
 import Button from '../shared/button';
+import Link from 'next/link';
 
 
 const Hero = () => {
@@ -32,10 +33,10 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <Button text='Get Started' link='/contact' />
-                <button type='button' className="px-4 md:px-8 py-4 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold hover:border-[#dd1e26] hover:text-[#dd1e26] transition-all duration-300">
-                  View Our Work
-                </button>
+                <Button text='Get to Know Us' link='/about' />
+                <Link href="/contact" type='button' className="px-4 md:px-8 py-4 border-2 border-gray-300 text-gray-900 rounded-lg font-semibold hover:border-[#dd1e26] hover:text-[#dd1e26] transition-all duration-300 text-center">
+                  Talk to Us 
+                </Link>
               </div>
 
               {/* Stats */}
@@ -76,7 +77,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <div className="font-bold text-gray-900">Trusted Partner</div>
-                  <div className="text-sm text-gray-600">500+ Brands</div>
+                  <div className="text-sm text-gray-600">50+ Brands</div>
                 </div>
               </div>
             </div>
