@@ -1,6 +1,6 @@
 "use client";
 
-import { Timer } from 'lucide-react';
+import { Target, Timer } from 'lucide-react';
 import React, { useState, ChangeEvent, FormEvent } from 'react'
 import { BiBriefcase, BiTrophy } from 'react-icons/bi';
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitterX } from 'react-icons/bs';
@@ -245,7 +245,7 @@ const ContactForm = () => {
                   { icon: <BiTrophy />, text: 'Award-winning team' },
                   { icon: <Timer />, text: '24-hour response time' },
                   { icon: <BiBriefcase />, text: '50+ successful projects' },
-                  { icon: '🎯', text: 'Results-driven approach' }
+                  { icon: <Target />, text: 'Results-driven approach' }
                 ].map((reason, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <span className="text-2xl">{reason.icon}</span>
