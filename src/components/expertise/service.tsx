@@ -1,14 +1,39 @@
 "use client";
 
 import { BookOpen, GraduationCap, Palette, Video } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { JSX, useState } from 'react'
+
+
+// 1️⃣ Define types
+interface ProcessStep {
+  step: string;
+  desc: string;
+}
+
+interface Offering {
+  name: string;
+  desc: string;
+}
+
+interface Service {
+  title: string;
+  icon: JSX.Element;
+  tagline: string;
+  description: string;
+  offerings: Offering[];
+  process: ProcessStep[];
+}
+
+
+type ServiceKey = 'branding' | 'training' | 'media';
+
 
 const Service = () => {
-    const [activeService, setActiveService] = useState('branding');
+    const [activeService, setActiveService] = useState<ServiceKey>('branding');
 
 
 
-    const services = {
+    const services: Record<ServiceKey, Service> = {
         branding: {
             title: 'Branding Experience',
             icon: <Palette className="w-6 h-6" />,
@@ -81,7 +106,7 @@ const Service = () => {
                         {Object.entries(services).map(([key, service]) => (
                             <button
                                 key={key}
-                                onClick={() => setActiveService(key)}
+                                onClick={() => setActiveService(key as ServiceKey)}
                                 className={`flex items-center gap-3 px-6 py-3 rounded-full font-semibold whitespace-nowrap transition-all ${activeService === key
                                     ? 'bg-[#dd1e26] text-white shadow-lg'
                                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
