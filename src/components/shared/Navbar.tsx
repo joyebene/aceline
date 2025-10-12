@@ -92,10 +92,10 @@ const Navbar = () => {
                 {openNav && (
                     <div className='fixed h-screen w-full bg-black/40 z-50 '>
                         <motion.div
-                            initial={{ opacity: 0, x: -70 }}
+                            initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -70 }}
-                            transition={{ duration: 0.5 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.2 }}
                             className='relative w-[75%] bg-[#fefbf6] h-full rounded-r-2xl'>
 
                             {/* Header */}
