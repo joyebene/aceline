@@ -14,8 +14,8 @@ const Cta = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button text='Get Started' link="/contact" />
-            <Link href="/work" className="px-10 py-4 border-2 border-gray-300 text-gray-900 rounded-md font-semibold hover:border-red-600 hover:text-red-600 transition-all">
-              View Our Work
+            <Link href="/contact" className="px-10 py-4 border-2 border-gray-300 text-gray-900 rounded-md font-semibold hover:border-red-600 hover:text-red-600 transition-all">
+              Talk to Us
             </Link>
           </div>
         </div>
