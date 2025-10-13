@@ -103,7 +103,7 @@ const Navbar = () => {
                             </div>
                             <div className='px-9 pt-6 w-full'>
                                 <div>
-                                    <h4 className='py-4 font-semibold text-lg'>Menu</h4>
+                                    <h4 className='py-4 font-semibold text-lg text-[#1a1b1e]'>Menu</h4>
 
                                     {/* Menu Links */}
                                     <div className={`w-full mb-5 rounded-lg p-2 text-center ${pathname === '/' ? 'text-[#f5f5f5] bg-[#dd1e26]' : 'bg-white shadow-sm text-[#1a1b1e]'}`}>
