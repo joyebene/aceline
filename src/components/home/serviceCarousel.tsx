@@ -3,40 +3,51 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Palette, Briefcase, Smartphone, GraduationCap, BookOpen, Lightbulb, Video, BarChart2, LineChart } from "lucide-react";
+import { Palette, Briefcase, Smartphone, GraduationCap, BookOpen, Lightbulb, Video, BarChart2, LineChart, Printer, Brush, ImageDown } from "lucide-react";
 
 const services = [
-    {
-        title: "Brand Experience",
-        subtitle: "Creating memorable identities that resonate",
-        features: [
-            { icon: <Palette className="w-6 h-6 text-primary" />, title: "Visual Identity", desc: "Logos, colors & typography" },
-            { icon: <Briefcase className="w-6 h-6 text-primary" />, title: "Brand Strategy", desc: "Positioning & storytelling" },
-            { icon: <Smartphone className="w-6 h-6 text-primary" />, title: "Digital Presence", desc: "Website & social media design" },
-        ],
-        stats: { rating: "4.9/5", label: "Client Rating", projects: "50+", label2: "Projects" },
-    },
-    {
-        title: "Training & Consultancy",
-        subtitle: "Empowering brands through knowledge and guidance",
-        features: [
-            { icon: <GraduationCap className="w-6 h-6 text-primary" />, title: "Workshops", desc: "Hands-on branding sessions" },
-            { icon: <BookOpen className="w-6 h-6 text-primary" />, title: "Consultancy", desc: "Tailored brand growth strategies" },
-            { icon: <Lightbulb className="w-6 h-6 text-primary" />, title: "Skill Development", desc: "Creative and marketing training" },
-        ],
-        stats: { rating: "5.0/5", label: "Feedback Score", projects: "10+", label2: "Brands Trained" },
-    },
-    {
-        title: "Media Management",
-        subtitle: "Building engagement through compelling content",
-        features: [
-            { icon: <Video className="w-6 h-6 text-primary" />, title: "Content Creation", desc: "Photo & video production" },
-            { icon: <BarChart2 className="w-6 h-6 text-primary" />, title: "Campaign Strategy", desc: "Targeted ad management" },
-            { icon: <LineChart className="w-6 h-6 text-primary" />, title: "Analytics", desc: "Performance insights & optimization" },
-        ],
-        stats: { rating: "4.8/5", label: "Audience Growth", projects: "30+", label2: "Campaigns" },
-    },
+  {
+    title: "Brand Experience",
+    subtitle: "Creating memorable identities that resonate",
+    features: [
+      { icon: <Palette className="w-6 h-6 text-" />, title: "Visual Identity", desc: "Logos, colors & typography" },
+      { icon: <Briefcase className="w-6 h-6 text-primary" />, title: "Brand Strategy", desc: "Positioning & storytelling" },
+      { icon: <Smartphone className="w-6 h-6 text-primary" />, title: "Digital Presence", desc: "Website & social media design" },
+    ],
+    stats: { rating: "4.9/5", label: "Client Rating", projects: "50+", label2: "Projects" },
+  },
+  {
+    title: "Training & Consultancy",
+    subtitle: "Empowering brands through knowledge and guidance",
+    features: [
+      { icon: <GraduationCap className="w-6 h-6 text-primary" />, title: "Workshops", desc: "Hands-on branding sessions" },
+      { icon: <BookOpen className="w-6 h-6 text-primary" />, title: "Consultancy", desc: "Tailored brand growth strategies" },
+      { icon: <Lightbulb className="w-6 h-6 text-primary" />, title: "Skill Development", desc: "Creative and marketing training" },
+    ],
+    stats: { rating: "5.0/5", label: "Feedback Score", projects: "10+", label2: "Brands Trained" },
+  },
+  {
+    title: "Media Management",
+    subtitle: "Building engagement through compelling content",
+    features: [
+      { icon: <Video className="w-6 h-6 text-primary" />, title: "Content Creation", desc: "Photo & video production" },
+      { icon: <BarChart2 className="w-6 h-6 text-primary" />, title: "Campaign Strategy", desc: "Targeted ad management" },
+      { icon: <LineChart className="w-6 h-6 text-primary" />, title: "Analytics", desc: "Performance insights & optimization" },
+    ],
+    stats: { rating: "4.8/5", label: "Audience Growth", projects: "30+", label2: "Campaigns" },
+  },
+  {
+    title: "Printing & Artistry",
+    subtitle: "Bringing creativity to life through design and production",
+    features: [
+      { icon: <Printer className="w-6 h-6 text-primary" />, title: "Digital & Offset Printing", desc: "High-quality prints for all materials" },
+      { icon: <Brush className="w-6 h-6 text-primary" />, title: "Custom Art & Illustration", desc: "Unique artwork tailored to your brand" },
+      { icon: <ImageDown className="w-6 h-6 text-primary" />, title: "Merch & Branding Items", desc: "T-shirts, flyers, banners, and more" },
+    ],
+    stats: { rating: "4.9/5", label: "Quality Rating", projects: "10+", label2: "Print Jobs Completed" },
+  },
 ];
+
 
 
 export default function ServicesCarousel() {
@@ -94,7 +105,7 @@ export default function ServicesCarousel() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         {current.features.map((f, i) => (
                             <div key={i} className="rounded-xl p-6 hover:shadow-md transition bg-[#fefbf6] shadow-md">
-                                <div className="mb-3 flex items-center justify-center">{f.icon}</div>
+                                <div className="mb-3 flex items-center justify-center text-gray-800">{f.icon}</div>
                                 <h3 className="font-semibold text-gray-800">{f.title}</h3>
                                 <p className="text-sm text-gray-500">{f.desc}</p>
                             </div>

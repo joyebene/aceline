@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, GraduationCap, Palette, Video } from 'lucide-react';
+import { BookOpen, GraduationCap, Palette, Printer, Video } from 'lucide-react';
 import React, { JSX, useState } from 'react'
 
 
@@ -25,76 +25,99 @@ interface Service {
 }
 
 
-type ServiceKey = 'branding' | 'training' | 'media';
+type ServiceKey = 'branding' | 'training' | 'media' | 'printing';
 
 
 const Service = () => {
     const [activeService, setActiveService] = useState<ServiceKey>('branding');
 
 
+const services: Record<ServiceKey, Service> = {
+    branding: {
+        title: 'Branding Experience',
+        icon: <Palette className="w-6 h-6 text-primary" />,
+        tagline: 'Creating memorable identities that resonate',
+        description: 'We craft distinctive brand identities that capture your essence and connect with your audience on an emotional level.',
+        offerings: [
+            { name: 'Brand Strategy', desc: 'Positioning, messaging, and competitive analysis' },
+            { name: 'Logo Design', desc: 'Unique visual marks that represent your brand' },
+            { name: 'Visual Identity', desc: 'Color palettes, typography, and design systems' },
+            { name: 'Brand Guidelines', desc: 'Comprehensive style guides for consistency' },
+            { name: 'Brand Naming', desc: 'Memorable names that capture your essence' },
+            { name: 'Brand Architecture', desc: 'Organizing multi-brand portfolios' }
+        ],
+        process: [
+            { step: 'Discovery', desc: 'Understanding your business, audience, and goals' },
+            { step: 'Strategy', desc: 'Developing positioning and messaging framework' },
+            { step: 'Design', desc: 'Creating visual identity and brand elements' },
+            { step: 'Delivery', desc: 'Implementing guidelines and brand assets' }
+        ]
+    },
 
-    const services: Record<ServiceKey, Service> = {
-        branding: {
-            title: 'Branding Experience',
-            icon: <Palette className="w-6 h-6" />,
-            tagline: 'Creating memorable identities that resonate',
-            description: 'We craft distinctive brand identities that capture your essence and connect with your audience on an emotional level.',
-            offerings: [
-                { name: 'Brand Strategy', desc: 'Positioning, messaging, and competitive analysis' },
-                { name: 'Logo Design', desc: 'Unique visual marks that represent your brand' },
-                { name: 'Visual Identity', desc: 'Color palettes, typography, and design systems' },
-                { name: 'Brand Guidelines', desc: 'Comprehensive style guides for consistency' },
-                { name: 'Brand Naming', desc: 'Memorable names that capture your essence' },
-                { name: 'Brand Architecture', desc: 'Organizing multi-brand portfolios' }
-            ],
-            process: [
-                { step: 'Discovery', desc: 'Understanding your business, audience, and goals' },
-                { step: 'Strategy', desc: 'Developing positioning and messaging framework' },
-                { step: 'Design', desc: 'Creating visual identity and brand elements' },
-                { step: 'Delivery', desc: 'Implementing guidelines and brand assets' }
-            ]
-        },
-        training: {
-            title: 'Training & Consultancy',
-            icon: <GraduationCap className="w-6 h-6 text-primary" />,
-            tagline: 'Empowering teams with brand expertise',
-            description: 'We equip your team with the knowledge and tools to become brand champions and drive consistent brand execution.',
-            offerings: [
-                { name: 'Corporate Workshops', desc: 'Interactive brand training for teams' },
-                { name: 'Brand Coaching', desc: 'One-on-one sessions with brand experts' },
-                { name: 'Strategy Sessions', desc: 'Deep-dive strategic planning workshops' },
-                { name: 'Brand Audits', desc: 'Comprehensive assessment of brand health' },
-                { name: 'Leadership Training', desc: 'Executive-level brand leadership programs' },
-                { name: 'Implementation Support', desc: 'Ongoing guidance for brand rollout' }
-            ],
-            process: [
-                { step: 'Assessment', desc: 'Evaluating current brand knowledge and gaps' },
-                { step: 'Curriculum', desc: 'Designing customized training programs' },
-                { step: 'Delivery', desc: 'Interactive workshops and coaching sessions' },
-                { step: 'Follow-up', desc: 'Ongoing support and reinforcement' }
-            ]
-        },
-        media: {
-            title: 'Media Management',
-            icon: <Video className="w-6 h-6 text-primary" />,
-            tagline: 'Amplifying your brand voice',
-            description: 'We manage your digital presence across all platforms, ensuring consistent messaging and maximum engagement.',
-            offerings: [
-                { name: 'Social Strategy', desc: 'Platform-specific content strategies' },
-                { name: 'Content Creation', desc: 'Engaging posts, videos, and graphics' },
-                { name: 'PR Campaigns', desc: 'Media relations and press outreach' },
-                { name: 'Analytics & Reporting', desc: 'Data-driven insights and optimization' },
-                { name: 'Community Management', desc: 'Engagement and reputation monitoring' },
-                { name: 'Influencer Partnerships', desc: 'Strategic collaborations and campaigns' }
-            ],
-            process: [
-                { step: 'Audit', desc: 'Analyzing current digital presence and performance' },
-                { step: 'Strategy', desc: 'Developing content calendar and campaign plans' },
-                { step: 'Creation', desc: 'Producing high-quality content assets' },
-                { step: 'Management', desc: 'Publishing, monitoring, and optimizing' }
-            ]
-        }
-    };
+    training: {
+        title: 'Training & Consultancy',
+        icon: <GraduationCap className="w-6 h-6 text-primary" />,
+        tagline: 'Empowering teams with brand expertise',
+        description: 'We equip your team with the knowledge and tools to become brand champions and drive consistent brand execution.',
+        offerings: [
+            { name: 'Corporate Workshops', desc: 'Interactive brand training for teams' },
+            { name: 'Brand Coaching', desc: 'One-on-one sessions with brand experts' },
+            { name: 'Strategy Sessions', desc: 'Deep-dive strategic planning workshops' },
+            { name: 'Brand Audits', desc: 'Comprehensive assessment of brand health' },
+            { name: 'Leadership Training', desc: 'Executive-level brand leadership programs' },
+            { name: 'Implementation Support', desc: 'Ongoing guidance for brand rollout' }
+        ],
+        process: [
+            { step: 'Assessment', desc: 'Evaluating current brand knowledge and gaps' },
+            { step: 'Curriculum', desc: 'Designing customized training programs' },
+            { step: 'Delivery', desc: 'Interactive workshops and coaching sessions' },
+            { step: 'Follow-up', desc: 'Ongoing support and reinforcement' }
+        ]
+    },
+
+    media: {
+        title: 'Media Management',
+        icon: <Video className="w-6 h-6 text-primary" />,
+        tagline: 'Amplifying your brand voice',
+        description: 'We manage your digital presence across all platforms, ensuring consistent messaging and maximum engagement.',
+        offerings: [
+            { name: 'Social Strategy', desc: 'Platform-specific content strategies' },
+            { name: 'Content Creation', desc: 'Engaging posts, videos, and graphics' },
+            { name: 'PR Campaigns', desc: 'Media relations and press outreach' },
+            { name: 'Analytics & Reporting', desc: 'Data-driven insights and optimization' },
+            { name: 'Community Management', desc: 'Engagement and reputation monitoring' },
+            { name: 'Influencer Partnerships', desc: 'Strategic collaborations and campaigns' }
+        ],
+        process: [
+            { step: 'Audit', desc: 'Analyzing current digital presence and performance' },
+            { step: 'Strategy', desc: 'Developing content calendar and campaign plans' },
+            { step: 'Creation', desc: 'Producing high-quality content assets' },
+            { step: 'Management', desc: 'Publishing, monitoring, and optimizing' }
+        ]
+    },
+
+    printing: {
+        title: 'Printing & Artistry',
+        icon: <Printer className="w-6 h-6 text-primary" />,
+        tagline: 'Bringing creativity to life through design and production',
+        description: 'We transform ideas into tangible masterpieces with professional printing, custom artistry, and branded merchandise.',
+        offerings: [
+            { name: 'Digital & Offset Printing', desc: 'High-quality prints for marketing materials and corporate needs' },
+            { name: 'Large Format Printing', desc: 'Banners, billboards, and signage that make an impact' },
+            { name: 'Custom Art & Illustration', desc: 'Unique hand-drawn or digital artwork for brands and individuals' },
+            { name: 'Merch & Branding Items', desc: 'Branded T-shirts, mugs, flyers, cards, and more' },
+            { name: 'Graphic Design Support', desc: 'Creative layout and print-ready designs' },
+            { name: 'Finishing & Packaging', desc: 'Lamination, binding, embossing, and custom packaging' }
+        ],
+        process: [
+            { step: 'Concept', desc: 'Understanding your vision and artistic goals' },
+            { step: 'Design', desc: 'Creating design mockups and print layouts' },
+            { step: 'Production', desc: 'Printing and crafting with premium materials' },
+            { step: 'Delivery', desc: 'Quality assurance and on-time completion' }
+        ]
+    }
+};
+
 
     const currentService = services[activeService];
 
@@ -124,7 +147,7 @@ const Service = () => {
             <section className="py-10 sm:py-15 md:py-20">
                     {/* Service Header */}
                     <div className="text-center mb-16">
-                        <div className="mb-4 flex justify-center">{currentService.icon}</div>
+                        <div className="mb-4 flex justify-center text-gray-800">{currentService.icon}</div>
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">{currentService.title}</h2>
                         <p className="text-2xl text-[#dd1e26] font-semibold mb-6">{currentService.tagline}</p>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">{currentService.description}</p>
