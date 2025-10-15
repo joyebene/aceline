@@ -17,7 +17,7 @@ const Hero = () => {
                 <div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full mb-3">
                 <div className="w-2 h-2 bg-[#dd1e26] rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-[#dd1e26]">Award-winning branding agency</span>
+                <span className="text-sm font-medium text-[#dd1e26]">Go Bold</span>
               </div>
 
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">

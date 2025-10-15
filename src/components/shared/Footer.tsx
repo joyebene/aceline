@@ -18,7 +18,7 @@ export default function Footer() {
             <span className="text-3xl font-bold text-red-500">aceline</span>
           </Link>
           <p className="mt-4 text-sm text-gray-400">
-            Award-winning branding agency transforming businesses through strategic design and data-driven insights.
+           Trausted branding agency transforming businesses through strategic design and data-driven insights.
           </p>
           <div className="flex items-center space-x-4 mt-4">
             <a href="#" className="text-red-500 hover:text-red-400">
