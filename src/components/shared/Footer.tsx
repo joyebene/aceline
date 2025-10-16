@@ -1,9 +1,7 @@
-// components/Footer.js
-import Image from 'next/image';
 import Link from 'next/link';
 import { BsInstagram } from 'react-icons/bs';
-import { FaFacebook } from 'react-icons/fa';
-import { LiaLinkedin } from 'react-icons/lia';
+import { FaFacebook, FaTiktok } from 'react-icons/fa';
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,17 +19,17 @@ export default function Footer() {
            Trausted branding agency transforming businesses through strategic design and data-driven insights.
           </p>
           <div className="flex items-center space-x-4 mt-4">
-            <a href="#" className="text-red-500 hover:text-red-400">
+            <a href="https://www.facebook.com/share/1FNgzVL4VQ/?mibextid=wwXIfr" className="text-red-500 hover:text-red-400">
               <span className="sr-only">Facebook</span>
               <FaFacebook color='blue' size={24} />
             </a>
-            <a href="#" className="text-red-500 hover:text-red-400">
+            <a href="https://www.instagram.com/aceline.il?igsh=cDM0MWl1Zzh0bHB2&utm_source=qr" className="text-red-500 hover:text-red-400">
               <span className="sr-only">Instagram</span>
               <BsInstagram color='#E4405F' size={23} />
             </a>
-            <a href="#" className="text-red-500 hover:text-red-400">
+            <a href="https://www.tiktok.com/@aceline.il?_t=ZN-90aoS3bgR8Q&_r=1" className="text-red-500 hover:text-red-400">
               <span className="sr-only">Linkedin</span>
-              <LiaLinkedin color='#0A66C2' size={30} />
+              <FaTiktok fill='white' size={23} />
             </a>
           </div>
         </div>

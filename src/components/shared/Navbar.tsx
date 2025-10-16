@@ -29,7 +29,7 @@ const NavLinks = [
 
 const ActionLink = {
     name: "Let’s Talk",
-    path: "https://wa.me/2349012345678?text=Hello%20Aceline!%20I%27d%20love%20to%20discuss%20a%20branding%20project.",
+    path: "https://wa.me/+234 913 656 6319?text=Hello%20Aceline!%20I%27d%20love%20to%20discuss%20a%20branding%20project.",
     type: "button",
 };
 

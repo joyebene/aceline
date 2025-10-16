@@ -1,9 +1,10 @@
 "use client";
 
 import { Target, Timer } from 'lucide-react';
+import Link from 'next/link';
 import React, { useState, ChangeEvent, FormEvent } from 'react'
 import { BiBriefcase, BiTrophy } from 'react-icons/bi';
-import { BsFacebook, BsInstagram, BsLinkedin, BsTwitterX } from 'react-icons/bs';
+import { BsFacebook, BsInstagram, BsLinkedin, BsTiktok } from 'react-icons/bs';
 
 
 const ContactForm = () => {
@@ -27,7 +28,7 @@ const ContactForm = () => {
     phone: string;
     company: string;
     service: string;
-    budget: string;
+    budget?: string;
     message: string;
     consent: boolean;
   }
@@ -43,40 +44,75 @@ const ContactForm = () => {
       };
 
   // ✅ handle form submit
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus({
-      type: 'success',
-      message: "Thank you! We'll get back to you within 24 hours.",
-    });
 
-    setTimeout(() => {
-      setFormStatus({ type: '', message: '' });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        budget: '',
-        message: '',
-        consent: false,
+    try {
+      const response = await fetch("https://formspree.io/f/mgvnrdpj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    }, 5000);
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message: "Thank you! We'll get back to you within 24 hours.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          budget: "",
+          message: "",
+          consent: false,
+        });
+      } else {
+        setFormStatus({
+          type: "error",
+          message: "Something went wrong. Please try again later.",
+        });
+      }
+    } catch (error: unknown) {
+      let errorMessage = "Network error. Please check your connection.";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+
+      setFormStatus({
+        type: "error",
+        message: errorMessage,
+      });
+    }
+
   };
+
 
   return (
     <section className="pt-10 sm:pt-15 md:pt-40 pb-20 md:pb-40 px-4 md:px-20">
       <div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 md:p-10 shadow-xl">
+          <form
+            action="https://formspree.io/f/mgvnrdpj"
+            method="POST"
+            onSubmit={handleSubmit}
+            className="bg-white rounded-3xl p-8 md:p-10 shadow-xl text-gray-900"
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a message</h2>
-            <p className="text-gray-600 mb-8">Fill out the form below and we&apos;ll get back to you soon.</p>
+            <p className="text-gray-600 mb-8">
+              Fill out the form below and we&apos;ll get back to you soon.
+            </p>
 
             {formStatus.message && (
-              <div className={`mb-6 p-4 rounded-xl ${formStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                }`}>
+              <div
+                className={`mb-6 p-4 rounded-xl ${formStatus.type === "success"
+                    ? "bg-green-100 text-green-800"
+                    : "bg-red-100 text-red-800"
+                  }`}
+              >
                 {formStatus.message}
               </div>
             )}
@@ -89,10 +125,11 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   value={formData.name}
-                  onChange={handleInputChange('name')}
+                  onChange={handleInputChange("name")}
                   required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-600 transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-600 transition-all text-gray-900"
                   placeholder="John Doe"
                 />
               </div>
@@ -105,8 +142,9 @@ const ContactForm = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     value={formData.email}
-                    onChange={handleInputChange('email')}
+                    onChange={handleInputChange("email")}
                     required
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#dd1e26] transition-all"
                     placeholder="john@example.com"
@@ -118,8 +156,9 @@ const ContactForm = () => {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     value={formData.phone}
-                    onChange={handleInputChange('phone')}
+                    onChange={handleInputChange("phone")}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#dd1e26] transition-all"
                     placeholder="+234 800 000 0000"
                   />
@@ -133,8 +172,9 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="text"
+                  name="company"
                   value={formData.company}
-                  onChange={handleInputChange('company')}
+                  onChange={handleInputChange("company")}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-600 transition-all"
                   placeholder="Your Company"
                 />
@@ -143,13 +183,17 @@ const ContactForm = () => {
               {/* Service & Budget */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor='service' className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="service"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Service Interested In
                   </label>
                   <select
-                    id='service'
+                    id="service"
+                    name="service"
                     value={formData.service}
-                    onChange={handleInputChange('service')}
+                    onChange={handleInputChange("service")}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-600 transition-all appearance-none bg-white"
                   >
                     <option value="">Select a service</option>
@@ -160,13 +204,17 @@ const ContactForm = () => {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor='budget' className="block text-sm font-semibold text-gray-900 mb-2">
+                  <label
+                    htmlFor="budget"
+                    className="block text-sm font-semibold text-gray-900 mb-2"
+                  >
                     Budget Range
                   </label>
                   <select
-                    id='budget'
+                    id="budget"
+                    name="budget"
                     value={formData.budget}
-                    onChange={handleInputChange('budget')}
+                    onChange={handleInputChange("budget")}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-600 transition-all appearance-none bg-white"
                   >
                     <option value="">Select budget</option>
@@ -184,8 +232,9 @@ const ContactForm = () => {
                   Your Message <span className="text-red-600">*</span>
                 </label>
                 <textarea
+                  name="message"
                   value={formData.message}
-                  onChange={handleInputChange('message')}
+                  onChange={handleInputChange("message")}
                   required
                   rows={5}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#dd1e26] transition-all resize-none"
@@ -199,17 +248,18 @@ const ContactForm = () => {
                   type="checkbox"
                   id="consent"
                   checked={formData.consent}
-                  onChange={handleInputChange('consent')}
+                  onChange={handleInputChange("consent")}
                   className="w-5 h-5 text-[#dd1e26] border-gray-300 rounded focus:ring-[#dd1e26] mt-0.5"
                 />
                 <label htmlFor="consent" className="text-sm text-gray-600">
-                  I agree to receive communications from Aceline and understand my data will be processed according to the Privacy Policy.
+                  I agree to receive communications from Aceline and understand my data
+                  will be processed according to the Privacy Policy.
                 </label>
               </div>
 
               {/* Submit Button */}
               <button
-                type='button'
+                type="submit"
                 disabled={!formData.consent}
                 className="w-full py-4 bg-gradient-to-r from-[#dd1e26] to-red-700 text-white rounded-lg font-bold hover:shadow-xl hover:shadow-red-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -217,6 +267,7 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
+
 
           {/* Additional Info */}
           <div className="space-y-8">
@@ -260,15 +311,15 @@ const ContactForm = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Follow Us</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { name: 'LinkedIn', icon: <BsLinkedin />, color: 'from-blue-600 to-blue-700' },
-                  { name: 'Twitter', icon: <BsTwitterX />, color: 'from-sky-500 to-black' },
-                  { name: 'Instagram', icon: <BsInstagram />, color: 'from-pink-500 to-purple-600' },
-                  { name: 'Facebook', icon: <BsFacebook />, color: 'from-blue-500 to-indigo-600' }
+                  { name: 'LinkedIn', icon: <BsLinkedin />, color: 'from-blue-600 to-blue-700', link: '' },
+                  { name: 'Twitter', icon: <BsTiktok />, color: 'from-sky-500 to-black', link: 'https://www.tiktok.com/@aceline.il?_t=ZN-90aoS3bgR8Q&_r=1' },
+                  { name: 'Instagram', icon: <BsInstagram />, color: 'from-pink-500 to-purple-600', link: 'https://www.instagram.com/aceline.il?igsh=cDM0MWl1Zzh0bHB2&utm_source=qr' },
+                  { name: 'Facebook', icon: <BsFacebook />, color: 'from-blue-500 to-indigo-600', link: 'https://www.facebook.com/share/1FNgzVL4VQ/?mibextid=wwXIfr' }
                 ].map((social, i) => (
-                  <button key={i} className={`p-4 bg-gradient-to-br ${social.color} rounded-xl text-white font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2`}>
+                  <Link href={social.link} key={i} className={`p-4 bg-gradient-to-br ${social.color} rounded-xl text-white font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2`}>
                     <span className="text-2xl">{social.icon}</span>
                     <span>{social.name}</span>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>

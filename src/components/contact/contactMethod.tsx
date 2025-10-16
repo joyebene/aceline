@@ -13,7 +13,7 @@ const ContactMethod = () => {
                   </svg>
                 ),
                 title: 'Call Us',
-                detail: '+234 800 123 4567',
+                detail: '+234 913 656 6319',
                 description: 'Mon-Fri 9am-6pm WAT',
                 action: 'Call Now',
                 href: 'tel:+2348001234567'
@@ -26,7 +26,7 @@ const ContactMethod = () => {
                   </svg>
                 ),
                 title: 'Email Us',
-                detail: 'hello@aceline.com',
+                detail: 'acelineintl@gmail.com',
                 description: 'We reply within 24 hours',
                 action: 'Send Email',
                 href: 'mailto:hello@aceline.com'
@@ -38,7 +38,7 @@ const ContactMethod = () => {
                   </svg>
                 ),
                 title: 'Visit Us',
-                detail: 'Abuja, Nigeria',
+                detail: 'Novare Central Wuse Zone 5, Abuja, Nigeria',
                 description: 'Schedule an appointment',
                 action: 'Get Directions',
                 href: '#map'

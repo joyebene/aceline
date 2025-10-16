@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="text-center mb-8">
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by leading brands</p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
             {['TechCorp', 'GreenEarth', 'FoodieHub', 'HealthPlus', 'StyleCo', 'EduMaster'].map((brand, i) => (
               <div key={i} className="text-2xl font-bold text-gray-900">{brand}</div>
             ))}

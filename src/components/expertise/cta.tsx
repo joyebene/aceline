@@ -12,7 +12,7 @@ const Cta = () => {
             Let&apos;s discuss how our expertise can help your business thrive.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button text="Book Consultation" link='/contact' className='border-2 border-white' />
+            <Button text="Book a Consultation" link='/contact' className='border-2 border-white' />
           </div>
         </div>
       </section>
