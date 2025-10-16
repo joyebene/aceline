@@ -9,21 +9,31 @@ export default function PopupSubscribe() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  // Show popup after 5 seconds (customizable)
+  // ✅ Show popup only if not shown before
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 5000);
-    return () => clearTimeout(timer);
+    const hasSeenPopup = localStorage.getItem("hasSeenPopup");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 5000); // Show after 5 seconds
+      return () => clearTimeout(timer);
+    }
   }, []);
+
+  const handleClose = () => {
+    setShowPopup(false);
+    localStorage.setItem("hasSeenPopup", "true"); // Mark as shown
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return alert("Please enter your email");
     setSubmitted(true);
 
-    // TODO: Integrate with your backend or newsletter API (e.g., Mailchimp)
     console.log("Subscribed email:", email);
+
+    // ✅ Remember that the user interacted with the popup
+    localStorage.setItem("hasSeenPopup", "true");
 
     setTimeout(() => {
       setShowPopup(false);
@@ -46,11 +56,12 @@ export default function PopupSubscribe() {
             className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative"
           >
             {/* Close Button */}
-            <button type="button"
-              onClick={() => setShowPopup(false)}
+            <button
+              type="button"
+              onClick={handleClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
             >
-              {<X className="w-5 h-5" />}
+              <X className="w-5 h-5" />
             </button>
 
             {!submitted ? (
