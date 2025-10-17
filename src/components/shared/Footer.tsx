@@ -59,10 +59,10 @@ export default function Footer() {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-red-500 mb-4">Contact</h3>
-          <p className="text-sm text-gray-400">garki, Abuja</p>
-          <p className="text-sm text-gray-400">FCT, Nigeria</p>
-          <p className="mt-2 text-sm text-gray-400">Email: info@aceline.com</p>
-          <p className="text-sm text-gray-400">Phone: +1-234-567-8900</p>
+          <p className="text-sm text-gray-400">Novare Central Wuse Zone 5</p>
+          <p className="text-sm text-gray-400">Abuja, Nigeria</p>
+          <p className="mt-2 text-sm text-gray-400">Email: acelineintl@gmail.com</p>
+          <p className="text-sm text-gray-400">Phone: +234 913 656 6319</p>
         </div>
 
         {/* Newsletter Signup */}
@@ -77,7 +77,7 @@ export default function Footer() {
               placeholder="Enter your email"
               className="w-full p-2 rounded-l-md text-gray-100 focus:outline-none border border-gray-400"
             />
-            <button className="bg-red-500 text-white p-2 rounded-r-md hover:bg-red-600">
+            <button type="button" className="bg-red-500 text-white p-2 rounded-r-md hover:bg-red-600">
               Subscribe
             </button>
           </div>

@@ -16,7 +16,7 @@ const ContactMethod = () => {
                 detail: '+234 913 656 6319',
                 description: 'Mon-Fri 9am-6pm WAT',
                 action: 'Call Now',
-                href: 'tel:+2348001234567'
+                href: 'tel:+2349136566319'
               },
               {
                 icon: (
@@ -29,7 +29,7 @@ const ContactMethod = () => {
                 detail: 'acelineintl@gmail.com',
                 description: 'We reply within 24 hours',
                 action: 'Send Email',
-                href: 'mailto:hello@aceline.com'
+                href: 'mailto:acelineintl@gmail.com'
               },
               {
                 icon: (
