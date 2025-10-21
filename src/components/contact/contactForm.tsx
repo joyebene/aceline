@@ -312,7 +312,7 @@ const ContactForm = () => {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { name: 'LinkedIn', icon: <BsLinkedin />, color: 'from-blue-600 to-blue-700', link: '' },
-                  { name: 'Twitter', icon: <BsTiktok />, color: 'from-sky-500 to-black', link: 'https://www.tiktok.com/@aceline.il?_t=ZN-90aoS3bgR8Q&_r=1' },
+                  { name: 'Tiktok', icon: <BsTiktok />, color: 'from-sky-500 to-black', link: 'https://www.tiktok.com/@aceline.il?_t=ZN-90aoS3bgR8Q&_r=1' },
                   { name: 'Instagram', icon: <BsInstagram />, color: 'from-pink-500 to-purple-600', link: 'https://www.instagram.com/aceline.il?igsh=cDM0MWl1Zzh0bHB2&utm_source=qr' },
                   { name: 'Facebook', icon: <BsFacebook />, color: 'from-blue-500 to-indigo-600', link: 'https://www.facebook.com/share/1FNgzVL4VQ/?mibextid=wwXIfr' }
                 ].map((social, i) => (
