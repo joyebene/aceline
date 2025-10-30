@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://acelinebrand.com
+
+# Sitemaps
+Sitemap: https://acelinebrand.com/sitemap.xml

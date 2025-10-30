@@ -39,7 +39,7 @@ const Navbar = () => {
     const pathname = usePathname();
     return (
         <div>
-            <div className='fixed shadow-md md:shadow-lg border-b border-[#dd1e26] w-full rounded-3xl bg-[#fefbf6] text-[#1A1B1E] z-10'>
+            <div className='fixed shadow-md md:shadow-lg border-b border-[#dd1e26] w-full rounded-b-3xl bg-[#fefbf6] text-[#1A1B1E] z-10'>
                 <div className='flex items-center justify-between px-4 sm:px-15 md:px-20 py-4 sm:py-6'>
                     {/* Logo */}
                     <div>
