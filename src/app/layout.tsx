@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Aceline",
+  icons: {
+    icon: "/favicon.ico",
+  },
   description: "Building brand that inspire confidence",
 };
 
