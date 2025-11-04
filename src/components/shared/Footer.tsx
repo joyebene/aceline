@@ -61,7 +61,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-red-500 mb-4">Contact</h3>
           <p className="text-sm text-gray-400">Novare Central Wuse Zone 5</p>
           <p className="text-sm text-gray-400">Abuja, Nigeria</p>
-          <p className="mt-2 text-sm text-gray-400">Email: acelineintl@gmail.com</p>
+          <p className="mt-2 text-sm text-gray-400">Email: info@acelinebrand.com</p>
           <p className="text-sm text-gray-400">Phone: +234 913 656 6319</p>
         </div>
 

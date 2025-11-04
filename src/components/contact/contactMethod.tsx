@@ -29,7 +29,7 @@ const ContactMethod = () => {
                 detail: 'acelineintl@gmail.com',
                 description: 'We reply within 24 hours',
                 action: 'Send Email',
-                href: 'mailto:acelineintl@gmail.com'
+                href: 'mailto:info@acelinebrand.com'
               },
               {
                 icon: (
